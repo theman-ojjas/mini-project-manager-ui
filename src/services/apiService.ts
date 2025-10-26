@@ -2,7 +2,8 @@ import axios from 'axios';
 import type{ Project, CreateProjectDto, CreateTaskDto, UpdateTaskDto, Task } from '../types';
 import { authService } from './authService';
 
-const API_URL = 'http://localhost:5009/api';
+const API_URL = 'https://mini-project-manager-server-gihr.onrender.com/api';
+
 
 const api = axios.create({
   baseURL: API_URL,
@@ -52,4 +53,5 @@ export const apiService = {
   async deleteTask(taskId: number): Promise<void> {
     await api.delete(`/tasks/${taskId}`);
   }
+
 };
