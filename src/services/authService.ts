@@ -1,7 +1,8 @@
 import axios from 'axios';
 import type{ AuthResponse, LoginCredentials, RegisterCredentials } from '../types';
 
-const API_URL = 'http://localhost:5009/api';
+const API_URL = 'https://mini-project-manager-server-gihr.onrender.com/api';
+
 
 export const authService = {
   async register(credentials: RegisterCredentials): Promise<AuthResponse> {
@@ -47,4 +48,5 @@ export const authService = {
     const userStr = localStorage.getItem('user');
     return userStr ? JSON.parse(userStr) : null;
   }
+
 };
